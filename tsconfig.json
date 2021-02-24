@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "rootDir": "src",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "module": "es6",
+    "strict": true,
+    "allowJs": true,
+    "declaration": true,
+    "declarationDir": "./dist",
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "target": "es5"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
