@@ -11,7 +11,7 @@ npm i @felipelealdefaria/tracker-service
 
 ### Usage
 
-```
+```javascript
 import { track } from '@felipelealdefaria/tracker-service'
 ```
 
@@ -19,11 +19,11 @@ import { track } from '@felipelealdefaria/tracker-service'
 
 This is required before any other methods can be called.
 
-```
+```javascript
 track.init(params: InitParams): Promise<void>
 ```
 
-**InitParams:
+**InitParams:**
 - apiKey: string
 - userId?: string
 - options?: {}
@@ -33,15 +33,15 @@ track.init(params: InitParams): Promise<void>
 
 Log an event in [Amplitude Dashboard](https://amplitude.com/).
 
-```
-track (params: TrackParams): Promise<void>
+```javascript
+track.log(params: LogParams): Promise<void>
 ```
 
-**TrackParams:
+**LogParams:**
 - eventType: string
 - eventProperties?: {}
 - timestamp?: number
-- callback?: Function**
+- callback?: Function
 
 ### Service's Architecture
 

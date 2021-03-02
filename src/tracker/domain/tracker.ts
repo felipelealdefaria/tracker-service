@@ -1,7 +1,7 @@
 export interface Tracker {
   init (params: InitParams): Promise<void>
-  track (params: TrackParams): Promise<void>
-  trackGroup (params: TrackGroupParams): Promise<void>
+  log (params: LogParams): Promise<void>
+  logGroup (params: LogGroupParams): Promise<void>
 
   getSessionId (): number
   isNewSession (): boolean
@@ -21,14 +21,14 @@ type InitParams = {
   callback?: Function
 }
 
-type TrackParams = {
+type LogParams = {
   eventType: string
   eventProperties?: {}
   timestamp?: number
   callback?: Function
 }
 
-type TrackGroupParams = {
+type LogGroupParams = {
   eventType: string
   eventProperties?: {}
   groups?: {}
