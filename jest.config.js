@@ -1,7 +1,12 @@
 module.exports = {
   roots: ['<rootDir>/src'],
+  testMatch: [
+    '<rootDir>/src/**/*.{spec, test}.{ts,tsx}',
+    '<rootDir>/src/**/__tests__/*.{spec, test}.{ts,tsx}'
+  ],
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.{ts,tsx}',
+    '<rootDir>/src/**/*.{spec, test}.{ts,tsx}',
+    '<rootDir>/src/**/__tests__/*.{spec, test}.{ts,tsx}',
     '!**/*.d.ts'
   ],
   coverageDirectory: 'coverage',
