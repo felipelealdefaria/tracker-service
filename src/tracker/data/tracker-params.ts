@@ -1,18 +1,31 @@
 export interface TrackerParams {
-  logEvent (params: LogParams): void
-  init (params: InitParams): void
-  setUserId (userId: string): void
-  setUserProperties (userProperties: unknown): void
+  logEvent (params: LogParams): StatusResponse
+  init (params: InitParams): StatusResponse
+  setUserId (userId: string): StatusResponse
+  setUserProperties (userProperties: unknown): StatusResponse
 
-  getSessionId (): number | null
-  isNewSession (): boolean | null
-  clearUserProperties (): void
-  setDomain (domain: string): void
-  setTrackOff (enable: boolean): void
-  setGroup (params: GroupParams): void
-  setDeviceId (deviceId: string): void
-  logGroup (params: LogGroupParams): void
+  getSessionId (): SessionIdResponse
+  isNewSession (): NewSessionResponse
+  clearUserProperties (): StatusResponse
+  setDomain (domain: string): StatusResponse
+  setTrackOff (enable: boolean): StatusResponse
+  setGroup (params: GroupParams): StatusResponse
+  setDeviceId (deviceId: string): StatusResponse
+  logGroup (params: LogGroupParams): StatusResponse
 }
+
+export type StatusResponse = {
+  error?: boolean
+  success?: boolean
+}
+
+export type SessionIdResponse = {
+  sessionId: number | null
+} & StatusResponse
+
+export type NewSessionResponse = {
+  isNewSession: boolean | null
+} & StatusResponse
 
 export type InitParams = {
   apiKey: string
