@@ -5,10 +5,8 @@ if (typeof window !== 'undefined') amplitude = require('amplitude-js')
 
 export class AmplitudeEventTracker implements Types.TrackerParams {
   init (params: Types.InitParams): Types.StatusResponse {
-    const { apiKey, userId, options, callback } = params
-
     try {
-      amplitude.getInstance().init(apiKey, userId, options, callback)
+      amplitude.getInstance().init(params)
       return { success: true }
     } catch (err) {
       console.error('AMPLITUDE INIT ERROR: ', err)
@@ -17,10 +15,8 @@ export class AmplitudeEventTracker implements Types.TrackerParams {
   }
 
   logEvent (params: Types.LogParams): Types.StatusResponse {
-    const { eventName, eventProperties, callback } = params
-
     try {
-      amplitude.getInstance().logEvent(eventName, eventProperties, callback)
+      amplitude.getInstance().logEvent(params)
       return { success: true }
     } catch (err) {
       console.error('AMPLITUDE LOG EVENT ERROR: ', err)
@@ -90,7 +86,7 @@ export class AmplitudeEventTracker implements Types.TrackerParams {
 
   setTrackOff (enable: boolean): Types.StatusResponse {
     try {
-      amplitude.getInstance().setTrackOff(enable)
+      amplitude.getInstance().setOptOut(enable)
       return { success: true }
     } catch (err) {
       console.error('AMPLITUDE SET TRACK OFF ERROR: ', err)
@@ -120,7 +116,7 @@ export class AmplitudeEventTracker implements Types.TrackerParams {
 
   logGroup (params: Types.LogGroupParams): Types.StatusResponse {
     try {
-      amplitude.getInstance().logGroup(params)
+      amplitude.getInstance().logEventWithGroups(params)
       return { success: true }
     } catch (err) {
       console.error('AMPLITUDE LOG GROUP ERROR: ', err)
