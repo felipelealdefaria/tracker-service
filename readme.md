@@ -1,6 +1,9 @@
 # Tracker Service
 Tracking service to map user interactions using the [Amplitude](https://github.com/amplitude/Amplitude-JavaScript) library.
 
+#### Development aid tool
+Amplitude Chrome Extension [here.](https://chrome.google.com/webstore/detail/amplitude-event-explorer/acehfjhnmhbmgkedjmjlobpgdicnhkbp)
+
 ### Installation
 
 ```bash
@@ -12,7 +15,7 @@ npm i @felipelealdefaria/tracker-service
 ### Usage
 
 ```typescript
-import { track } from '@felipelealdefaria/tracker-service'
+import track from '@felipelealdefaria/tracker-service'
 ```
 
 **1) Initialize:**
@@ -23,11 +26,15 @@ This is required before any other methods can be called.
 track.init(params: InitParams): { success?: boolean | error?: boolean }
 ```
 
-**InitParams:**
+```bash
+InitParams:
 - apiKey: string
 - userId?: string
-- options?: {} // [see more here](https://amplitude.github.io/Amplitude-JavaScript/Options/)
+- options?: {}
 - callback?: () => unknown
+```
+
+[See more options here.](https://amplitude.github.io/Amplitude-JavaScript/Options/)
 
 **2) Log Event:**
 
@@ -37,11 +44,13 @@ Log event in [Amplitude Dashboard](https://amplitude.com/).
 track.log(params: LogParams): { success?: boolean | error?: boolean }
 ```
 
-**LogParams:**
+```bash
+LogParams:
 - eventName: string
 - eventProperties?: {}
 - timestamp?: number
 - callback?: () => unknown
+```
 
 **3) Set User Identification:**
 
@@ -117,9 +126,11 @@ For example you can group people by their organization. In that case, groupType 
 track.setGroup(params: GroupParams): { success?: boolean | error?: boolean }
 ```
 
-**GroupParams:**
+```bash
+GroupParams:
 - groupType: string
 - groupName: string | string[]
+```
 
 **12) Log Group:**
 
@@ -129,11 +140,13 @@ Log an event with eventType, eventProperties, and groups. Use this to set event-
 track.logGroup(params: LogGroupParams): { success?: boolean | error?: boolean }
 ```
 
-**LogGroupParams:**
+```bash
+LogGroupParams:
 - eventName: string
 - eventProperties?: {}
 - group?: {}
 - callback?: () => unknown
+```
 
 ### Service's Architecture
 
