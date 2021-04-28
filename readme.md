@@ -1,4 +1,10 @@
+[![npm version](https://img.shields.io/npm/v/@felipelealdefaria/tracker-service)](https://github.com/felipelealdefaria/tracker-service)
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/@felipelealdefaria/tracker-service)](https://github.com/felipelealdefaria/tracker-service)
+[![npm bundle minzipped size (minzipped)](https://img.shields.io/bundlephobia/minzip/@felipelealdefaria/tracker-service)](https://github.com/felipelealdefaria/tracker-service)
+[![repo stars](https://img.shields.io/github/stars/felipelealdefaria/tracker-service)](https://github.com/felipelealdefaria/tracker-service)
+[![repo license](https://img.shields.io/github/license/felipelealdefaria/tracker-service)](https://github.com/felipelealdefaria/tracker-service)
 # Tracker Service
+
 Tracking service to map user interactions using the [Amplitude](https://github.com/amplitude/Amplitude-JavaScript) library.
 
 #### Development aid tool
