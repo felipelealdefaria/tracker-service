@@ -1,5 +1,5 @@
-import { tracker } from './factories/tracker-factory'
+import { track } from './factories/tracker-factory'
 
-export default tracker
+export default track
 
 export * from './domain/tracker'
