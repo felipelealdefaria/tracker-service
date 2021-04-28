@@ -65,7 +65,7 @@ track.setUserId(userId: string): { success?: boolean | error?: boolean }
 Identify current user properties:
 
 ```typescript
-track.setUserProperties(userId: string): { success?: boolean | error?: boolean }
+track.setUserProperties(userProperties: {}): { success?: boolean | error?: boolean }
 ```
 
 **5) Get Session Id:**
