@@ -21,7 +21,7 @@ export class TrackerService implements Types.Tracker {
     return { error: true }
   }
 
-  setUserProperties (userProperties: {}): Types.StatusResponse {
+  setUserProperties (userProperties: unknown): Types.StatusResponse {
     const res: Types.StatusResponse = this.tracker.setUserProperties(userProperties)
     if (res?.success) return { success: true }
     return { error: true }

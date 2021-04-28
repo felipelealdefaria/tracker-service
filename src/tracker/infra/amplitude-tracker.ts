@@ -5,8 +5,10 @@ if (typeof window !== 'undefined') amplitude = require('amplitude-js')
 
 export class AmplitudeEventTracker implements Types.TrackerParams {
   init (params: Types.InitParams): Types.StatusResponse {
+    const { apiKey, userId, options, callback } = params
+
     try {
-      amplitude.getInstance().init(params)
+      amplitude.getInstance().init(apiKey, userId, options, callback)
       return { success: true }
     } catch (err) {
       console.error('AMPLITUDE INIT ERROR: ', err)
@@ -15,8 +17,10 @@ export class AmplitudeEventTracker implements Types.TrackerParams {
   }
 
   logEvent (params: Types.LogParams): Types.StatusResponse {
+    const { eventName, eventProperties, timestamp, callback } = params
+
     try {
-      amplitude.getInstance().logEvent(params)
+      amplitude.getInstance().logEvent(eventName, eventProperties, timestamp, callback)
       return { success: true }
     } catch (err) {
       console.error('AMPLITUDE LOG EVENT ERROR: ', err)
@@ -34,7 +38,7 @@ export class AmplitudeEventTracker implements Types.TrackerParams {
     }
   }
 
-  setUserProperties (userProperties: {}): Types.StatusResponse {
+  setUserProperties (userProperties: unknown): Types.StatusResponse {
     try {
       amplitude.getInstance().setUserProperties(userProperties)
       return { success: true }
