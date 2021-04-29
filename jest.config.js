@@ -5,8 +5,7 @@ module.exports = {
     '<rootDir>/src/**/__tests__/*.{spec, test}.{ts,tsx}'
   ],
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.{spec, test}.{ts,tsx}',
-    '<rootDir>/src/**/__tests__/*.{spec, test}.{ts,tsx}',
+    '<rootDir>/src/**/*.ts',
     '!**/*.d.ts'
   ],
   coverageDirectory: 'coverage',

@@ -1,0 +1,15 @@
+on: [push]
+name: Test
+
+jobs:
+  test:
+    name: run test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: MakeTest
+      run: |
+        yarn test:ci
